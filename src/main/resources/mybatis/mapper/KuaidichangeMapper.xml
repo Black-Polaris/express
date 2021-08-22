@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.KuaidichangeMapper">
+    <resultMap id="KuaidichangeMap" type="Kuaidichange">
+        <result column="kuaidiNum" property="kuaidiNum" jdbcType="VARCHAR"/>
+        <result column="currentArea" property="currentArea" jdbcType="VARCHAR"/>
+        <result column="nextArea" property="nextArea" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="findById" resultMap="KuaidichangeMap">
+        select * from kuaidichange where kuaidiNum = #{kuaidiNum}
+    </select>
+    <insert id="insert">
+        insert into kuaidichange values(#{kuaidiNum},#{currentArea},#{nextArea})
+    </insert>
+
+</mapper>

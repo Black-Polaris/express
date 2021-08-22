@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.KuaidiMapper">
+    <resultMap id="KuaidiMap" type="Kuaidi">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="kuaidiNum" property="kuaidiNum" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="sendAddress" property="sendAddress" jdbcType="VARCHAR"/>
+        <result column="receiveName" property="receiveName" jdbcType="VARCHAR"/>
+        <result column="receivePhone" property="receivePhone" jdbcType="VARCHAR"/>
+        <result column="receiveAddress" property="receiveAddress" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <select id="query" resultMap="KuaidiMap">
+        select * from kuaidi
+    </select>
+    <select id="findById" resultMap="KuaidiMap">
+        select * from kuaidi where kuaidiNum = #{kuaidiNum}
+    </select>
+    <select id="findByPhone" resultMap="KuaidiMap">
+        select * from kuaidi where phone = #{phone}
+    </select>
+
+    <update id="update">
+        update kuaidi set username=#{username},phone=#{phone},sendAddress=#{sendAddress},
+                          receiveName= #{receiveName},receivePhone=#{receivePhone},receiveAddress=#{receiveAddress},createTime=#{createTime}
+        where kuaidiNum=#{kuaidiNum}
+    </update>
+
+    <delete id="delete">
+        delete from kuaidi where kuaidiNum=#{kuaidiNum}
+    </delete>
+</mapper>

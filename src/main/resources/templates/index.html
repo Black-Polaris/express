@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>快递信息管理系统</title>
+    <link rel="shortcut icon" th:href="@{images/favicon.ico}" />
+    
+
+    <!-- Bootstrap -->
+   <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" type="text/css">
+   <link rel="stylesheet" th:href="@{/plugins/adminLTE/css/AdminLTE.css}">
+   <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+    <link th:href="@{/css/response.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/silde.css}" rel="stylesheet" type="text/css">
+   <!--layui-->
+    <link th:href="@{/css/layui.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/modules/layer/default/layer.css}" rel="stylesheet" type="text/css">
+ </head>
+  <body>
+    <div class="header">
+      <div class="width1003">
+       <h1 class="logo"><a href="/toPage?url=/main"><img src="images/favicon.jpg" width="140" height="140" /></a></h1>
+       <div class="topLink">
+        <a href="/toPage?url=/contact" class="tl1">联系我们</a>
+        <a href="/toPage?url=/tousu" class="tl2">投诉建议</a>
+        <a href="/toPage?url=/job" class="tl3">人才招聘</a>
+       </div><!--topLink/-->
+       <div class="phones">
+        <!--登录注册功能点击事件还未启动-->
+        <div>
+         用户：<a th:text="${session.loginUser}+'&nbsp&nbsp&nbsp&nbsp'"></a>
+         <a th:if="${session.loginUser}==null" href="/login">登录</a>&nbsp;
+
+         <a th:if="${session.loginUser}==null" href="/register">注册</a>
+         <a th:if="${session.loginUser}!=null" href="/loginOut">注销</a>
+
+        </div>
+        <p>服务热线：<strong>201821314424</strong></p>
+       </div><!--phones/-->
+       <div class="clears"></div>
+      </div><!--width1003/-->
+     </div><!--header/-->
+
+
+     <div class="nav-toggle">
+      <div class="nav-open"><span class="glyphicon glyphicon-th-list"></span></div>
+      <div class="nav-close"><span class="glyphicon glyphicon-remove"></span></div>
+     </div>
+
+     <div class="clearfix"></div>
+
+    <!--导航栏-->
+    <div class="nav">
+     <ul class="width1003">
+      <li><a href="/toPage?url=/main">首页</a></li>
+      <li><a href="/toPage?url=/service">服务大厅</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/service">操作步骤</a>
+        <a href="/toPage?url=/service2">快递服务标准</a>
+        <a href="/toPage?url=/service3">违禁品信息</a>
+        <a href="/toPage?url=/tousu">投诉建议</a>
+       </div>
+
+      </li>
+      <li><a href="/toPage?url=/search">自助查询</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/search">快件查询</a>
+        <a href="/toPage?url=/search2">网点查询</a>
+        <a href="/toPage?url=/search3">订单查询</a>
+        <a href="/toPage?url=/search4">运费查询</a>
+       </div>
+      </li>
+      <li><a href="/toPage?url=/product">产品与服务</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/product">快运产品</a>
+        <a href="/toPage?url=/product">定制产品</a>
+        <a href="/toPage?url=/product">增值服务</a>
+        <a href="/toPage?url=/product">整车转运</a>
+        <a href="/toPage?url=/product">仓储物流</a>
+       </div>
+      </li>
+      <li><a href="/toPage?url=/join">加入我们</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/join">加盟指南</a>
+        <a href="/toPage?url=/job">人才招聘</a>
+       </div>
+      </li>
+
+      <li><a href="/toPage?url=/news">新闻公告</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/news">新闻</a>
+        <a href="/toPage?url=/news">公告</a>
+       </div>
+      </li>
+      <li><a href="/toPage?url=/about">走进我们</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/about">简介</a>
+        <a href="/toPage?url=/contact">联系我们</a>
+       </div>
+      </li>
+      <div class="clears"></div>
+     </ul>
+    </div><!--nav/-->
+
+    <!--layui轮播图-->
+    <div class="layui-carousel" id="test1">
+     <div carousel-item>
+      <div><img src="images/banner4.jpg" /></div>
+      <div><img src="images/banner2.jpg" /></div>
+      <div><img src="images/banner3.jpg" /></div>
+      <div><img src="images/banner1.jpg" /></div>
+     </div>
+    </div>
+
+     <div class="content">
+      <div class="width1003">
+       <h2 class="title">产品与服务 <span>/ Proudct & Service</span></h2>
+       <div class="index-pro">
+        <dl>
+         <a href="/toPage?url=/product">
+          <dt><img src="images/pcon1.png" width="100" height="100" /></dt>
+          <dd>
+           <h3>快运产品</h3>
+           <p>运输快捷，经济实用</p>
+          </dd>
+         </a>
+        </dl>
+        <dl>
+         <a href="/toPage?url=/product2">
+          <dt><img src="images/pcon2.png" width="100" height="100" /></dt>
+          <dd>
+           <h3>定制产品</h3>
+           <p>安全保价，放心托运</p>
+          </dd>
+         </a>
+        </dl>
+        <dl>
+         <a href="/toPage?url=/product3">
+          <dt><img src="images/pcon3.png" width="100" height="100" /></dt>
+          <dd>
+           <h3>增值服务</h3>
+           <p>运输快捷，经济实用</p>
+          </dd>
+         </a>
+        </dl>
+        <dl>
+         <a href="/toPage?url=/product4">
+          <dt><img src="images/pcon4.png" width="100" height="100" /></dt>
+          <dd>
+           <h3>整车转运</h3>
+           <p>专业打包，暖心服务</p>
+          </dd>
+         </a>
+        </dl>
+        <dl>
+         <a href="/toPage?url=/product5">
+          <dt><img src="images/pcon5.png" width="100" height="100" /></dt>
+          <dd>
+           <h3>仓储物流</h3>
+           <p>定时定点，足不出户</p>
+          </dd>
+         </a>
+        </dl>
+        <div class="clearfix"></div>
+       </div><!--index-pro/-->
+      </div><!--width1003/-->
+      <div class="index-search">
+       <div class="width1003">
+        <h2 class="title">自助查询 <span>/ Self Inquiry</span></h2>
+        <div class="index-search-list">
+         <div class="isl-box">
+          <h2>快件查询</h2>
+          <form action="/searchKuaidi" method="get">
+           <div class="islinput"><input type="text" placeholder="请输入运单号" name="kuaidiNum"/></div>
+           <div class="islsub"><input type="submit" value="查询" /></div>
+          </form>
+         </div>
+        </div><!--index-search-list/-->
+        <div class="index-search-list">
+         <div class="isl-box">
+          <h2>网点查询</h2>
+          <form action="/searchOutlets" method="get">
+           <div class="islinput"><input type="text" placeholder="请输入市区" name="address"/></div><br>
+           <div class="islsub"><input type="submit" value="查询" /></div>
+          </form>
+         </div>
+        </div><!--index-search-list/-->
+        <div class="index-search-list">
+         <div class="isl-box">
+          <h2>在线寄快递</h2>
+          <form action="/searchIfLogin" method="post">
+           <input type="text" hidden="hidden" name="username" th:value="${session.loginUser}" th:name="loginUser">
+           <button type="submit" class="btn btn-lg btn-primary btn-block" >寄快递</button>
+          </form>
+         </div>
+        </div><!--index-search-list/-->
+        <div class="clearfix"></div>
+       </div><!--index-search/-->
+      </div><!--index-search/-->
+      <div class="width1003">
+       <h2 class="title">新闻快讯 <span>/ News</span></h2>
+       <div class="index-new">
+        <ul class="new fl">
+         <li><a href="/toPage?url=/news">快递庆祝建党九十六周年暨深化“两学一做”表彰大会隆重召开</a><span>2021-6-20</span></li>
+         <li><a href="/toPage?url=/news">阿里巴巴董事局主席兼CEO张勇到访快递，感谢奋战一线的快递员</a><span>2021-6-20</span></li>
+         <li><a href="/toPage?url=/news">国家邮政局副局长赵民一行莅临昌平申通调研指导</a><span>2021-6-20</span></li>
+         <li><a href="/toPage?url=/news">申通快递荣获诸多大奖</a><span>2021-6-20</span></li>
+         <li><a href="/toPage?url=/news">告客户书</a><span>2021-6-20</span></li>
+         <li><a href="/toPage?url=/news">快递安全号码上线，信息保护再升级</a><span>2021-6-20</span></li>
+         <li><a href="/toPage?url=/news">促进快递物流发展座谈会已于近日召开</a><span>2021-6-20</span></li>
+        </ul>
+        <div class="inde-new-img fr">
+         <img src="images/n1.png" />
+        </div>
+        <div class="clearfix"></div>
+       </div><!--index-new/-->
+      </div><!--width1003/-->
+      <!--合作伙伴-->
+      <div class="links">
+       <div class="width1003">
+        <h2 class="title">合作伙伴 <span>/ Partners</span></h2>
+        <ul>
+         <li><a href="javascript:;"><img src="images/link1.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link2.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link3.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link4.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link5.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link6.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link7.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link8.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link9.jpg" /></a></li>
+         <li><a href="javascript:;"><img src="images/link1.jpg" /></a></li>
+         <div class="clearfix"></div>
+        </ul>
+       </div><!--width1003/-->
+      </div><!--links/-->
+     </div><!--content/-->
+    <!--底部栏-->
+    <footer>
+     <div class="width1003">
+      <ul>
+       <li class="ft-title">服务大厅</li>
+       <li><a href="/toPage?url=/service">操作步骤</a></li>
+       <li><a href="/toPage?url=/service2">快递服务标准</a></li>
+       <li><a href="/toPage?url=/service3">违禁品信息</a></li>
+       <li><a href="/toPage?url=/tousu">投诉建议</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">自助查询</li>
+       <li><a href="/toPage?url=/search">快件查询</a></li>
+       <li><a href="/toPage?url=/search2">网点查询</a></li>
+       <li><a href="/toPage?url=/search3">订单查询</a></li>
+       <li><a href="/toPage?url=/search4">运费查询</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">产品与服务</li>
+       <li><a href="/toPage?url=/product">快运产品</a></li>
+       <li><a href="/toPage?url=/product">定制产品</a></li>
+       <li><a href="/toPage?url=/product">增值服务</a></li>
+       <li><a href="/toPage?url=/product">整车转运</a></li>
+       <li><a href="/toPage?url=/product">仓储物流</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">加入我们</li>
+       <li><a href="/toPage?url=/join">加盟指南</a></li>
+       <li><a href="/toPage?url=/job">人才招聘</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">新闻公告</li>
+       <li><a href="/toPage?url=/news">新闻</a></li>
+       <li><a href="/toPage?url=/news">公告</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">走进我们</li>
+       <li><a href="/toPage?url=/about">简介</a></li>
+       <li><a href="/toPage?url=/contact">联系我们</a></li>
+      </ul>
+      <div class="footcontact">
+       <h2 class="ft-title">联系我们</h2>
+       <div class="fttext">
+        咨询热线：800-88888888<br />
+        总部地址：广东省广州市<br />
+       </div>
+
+      </div><!--footcontact/-->
+      <div class="clearfix"></div>
+     </div><!--width1003/-->
+    </footer>
+     <div class="copy">
+		Copyright © 2021
+     </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/style.js"></script>
+    <!--焦点轮换-->
+	<script src="js/jquery.excoloSlider.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    </script>
+    <script type="text/javascript">
+	 $(function(){
+		 //导航定位
+		 $(".nav li:eq(0) a:first").addClass("navCur");
+		 })
+	</script>
+
+    <script type="text/javascript" src="js/layui.js"></script>
+    <script>
+     //第一个轮播图
+     layui.use('carousel', function() {
+      var carousel = layui.carousel;
+      //建造实例化
+      carousel.render({
+       elem: '#test1',
+       width: '100%', //设置背景容器的宽度
+       arrow: 'always', //始终显示箭头,不会消失
+       autoplay:'true',
+       interval:300
+      });
+     });
+    </script>
+
+
+
+  <style>
+.copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
+</style>
+
+</body>
+</html>

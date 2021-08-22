@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Author" contect="http://www.webqin.net">
+    <title>17快运</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    
+    <!-- Bootstrap -->
+   <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" type="text/css">
+   <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+    <link href="css/response.css" rel="stylesheet">
+    <link href="css/silde.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="header">
+      <div class="width1003">
+       <h1 class="logo"><a href="index.html"><img src="images/logo.png" width="202" height="74" /></a></h1>
+       <div class="topLink">
+        <a href="/toPage?url=/contact" class="tl1">联系我们</a>
+        <a href="/toPage?url=/tousu" class="tl2">投诉建议</a>
+        <a href="/toPage?url=/job" class="tl3">人才招聘</a>
+       </div><!--topLink/-->
+       <div class="phones">
+        <div><a href="javascript:;" onclick="AddFavorite(window.location,document.title)">加入收藏</a>&nbsp;
+        <a href="javascript:;" onclick="SetHome(this,window.location)">设为首页</a></div>
+        <p>服务热线：<strong>XXX</strong></p>
+       </div><!--phones/-->
+       <div class="clears"></div>
+      </div><!--width1003/-->
+     </div><!--header/-->
+     <div class="nav-toggle">
+      <div class="nav-open"><span class="glyphicon glyphicon-th-list"></span></div>
+      <div class="nav-close"><span class="glyphicon glyphicon-remove"></span></div>
+     </div>
+     <div class="clearfix"></div>
+
+    <!--导航栏-->
+    <div class="nav">
+     <ul class="width1003">
+      <li><a href="/toPage?url=/main">首页</a></li>
+      <li><a href="/toPage?url=/service">服务大厅</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/service">操作步骤</a>
+        <a href="/toPage?url=/service2">快递服务标准</a>
+        <a href="/toPage?url=/service3">违禁品信息</a>
+        <a href="/toPage?url=/tousu">投诉建议</a>
+       </div>
+
+      </li>
+      <li><a href="/toPage?url=/search">自助查询</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/search">快件查询</a>
+        <a href="/toPage?url=/search2">网点查询</a>
+        <a href="/toPage?url=/search3">订单查询</a>
+        <a href="/toPage?url=/search4">运费查询</a>
+       </div>
+      </li>
+      <li><a href="/toPage?url=/product">产品与服务</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/product">快运产品</a>
+        <a href="/toPage?url=/product">定制产品</a>
+        <a href="/toPage?url=/product">增值服务</a>
+        <a href="/toPage?url=/product">整车转运</a>
+        <a href="/toPage?url=/product">仓储物流</a>
+       </div>
+      </li>
+      <li><a href="/toPage?url=/join">加入我们</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/join">加盟指南</a>
+        <a href="/toPage?url=/job">人才招聘</a>
+       </div>
+      </li>
+
+      <li><a href="/toPage?url=/news">新闻公告</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/news">新闻</a>
+        <a href="/toPage?url=/news">公告</a>
+       </div>
+      </li>
+      <li><a href="/toPage?url=/about">走进我们</a>
+       <div class="chilNav">
+        <a href="/toPage?url=/about">简介</a>
+        <a href="/toPage?url=/contact">联系我们</a>
+       </div>
+      </li>
+      <div class="clears"></div>
+     </ul>
+    </div><!--nav/-->
+     
+     <div class="content">
+      <div class="width1003">
+       <div class="content-left">
+        <h2 class="left-title">自助查询</h2>
+        <ul class="leftNav">
+         <li class="leftNavCur"><a href="search.html">运单查询</a></li>
+         <li><a href="search2.html">网点查询</a></li>
+         <li><a href="search3.html">货物追踪</a></li>
+         <li><a href="search4.html">订单查询</a></li>
+        </ul>
+        <div class="lefticon">
+         <a href="javascript:;"><img src="images/icon1.jpg" /><br />联系</a>
+         <a href="javascript:;"><img src="images/icon2.jpg" /><br />投诉</a>
+         <a href="javascript:;"><img src="images/icon3.jpg" /><br />下载</a>
+         <a href="javascript:;"><img src="images/icon4.jpg" /><br />招聘</a>
+        </div>
+       </div><!--content-left/-->
+       <div class="content-right">
+        <h2 class="right-title">网点查询</h2>
+        <div class="netlist">
+         <dl>
+          <dt><strong>菏泽市</strong> 18 个网点   15 个门店 </dt>
+          <dd>
+           <a href="netinfo.html">兰山区</a>
+           <a href="netinfo.html">罗庄区</a>
+           <a href="netinfo.html">河东区</a>
+           <a href="netinfo.html">郯城县</a>
+           <a href="netinfo.html">苍山县</a>
+           <a href="netinfo.html">莒南县</a>
+           <a href="netinfo.html">沂水县</a>
+           <a href="netinfo.html">蒙阴县</a>
+           <a href="netinfo.html">平邑县</a>
+           <a href="netinfo.html">费县</a>
+           <a href="netinfo.html">沂南县</a>
+           <a href="netinfo.html">临沭县</a>
+          </dd>
+         </dl>
+        </div><!--netlist/-->
+       </div><!--content-right/-->
+       <div class="clearfix"></div>
+      </div><!--width1003/-->
+     </div><!--content/-->
+    <!--底部栏-->
+    <footer>
+     <div class="width1003">
+      <ul>
+       <li class="ft-title">服务大厅</li>
+       <li><a href="/toPage?url=/service">操作步骤</a></li>
+       <li><a href="/toPage?url=/service2">快递服务标准</a></li>
+       <li><a href="/toPage?url=/service3">违禁品信息</a></li>
+       <li><a href="/toPage?url=/tousu">投诉建议</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">自助查询</li>
+       <li><a href="/toPage?url=/search">快件查询</a></li>
+       <li><a href="/toPage?url=/search2">网点查询</a></li>
+       <li><a href="/toPage?url=/search3">订单查询</a></li>
+       <li><a href="/toPage?url=/search4">运费查询</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">产品与服务</li>
+       <li><a href="/toPage?url=/product">快运产品</a></li>
+       <li><a href="/toPage?url=/product">定制产品</a></li>
+       <li><a href="/toPage?url=/product">增值服务</a></li>
+       <li><a href="/toPage?url=/product">整车转运</a></li>
+       <li><a href="/toPage?url=/product">仓储物流</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">加入我们</li>
+       <li><a href="/toPage?url=/join">加盟指南</a></li>
+       <li><a href="/toPage?url=/job">人才招聘</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">新闻公告</li>
+       <li><a href="/toPage?url=/news">新闻</a></li>
+       <li><a href="/toPage?url=/news">公告</a></li>
+      </ul>
+      <ul>
+       <li class="ft-title">走进我们</li>
+       <li><a href="/toPage?url=/about">简介</a></li>
+       <li><a href="/toPage?url=/contact">联系我们</a></li>
+      </ul>
+      <div class="footcontact">
+       <h2 class="ft-title">联系我们</h2>
+       <div class="fttext">
+        咨询热线：800-88888888<br />
+        总部地址：广东省广州市<br />
+       </div>
+
+      </div><!--footcontact/-->
+      <div class="clearfix"></div>
+     </div><!--width1003/-->
+    </footer>
+    <div class="copy">
+     Copyright © 2021
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/style.js"></script>
+    <!--焦点轮换-->
+	<script src="js/jquery.excoloSlider.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    </script>
+    <script type="text/javascript">
+	 $(function(){
+		 //导航定位
+		 $(".nav li:eq(1) a:first").addClass("navCur");
+		 })
+	</script>
+    
+  </body>
+</html>

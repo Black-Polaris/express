@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+/*此样式在窗口小于1280px的时候生效*/
+@media screen and (max-width: 1003px) {
+.width1003{width:100%;}
+.topLink{ display:none;}
+.index-pro dl{
+	width:33.33%;
+	}
+.index-search-list{
+	width:100%;
+	padding:7px;
+	}
+.index-new .new,.inde-new-img{
+	float:none;
+	width:100%;
+	padding:5px;
+	}
+.content-left,.content-right{
+	width:100%;
+	padding:8px;
+	}
+}
+/*此样式在窗口小于980px的时候生效*/
+@media screen and (max-width: 980px) {/*980*1280*/
+
+}
+/*此样式在窗口小于800px的时候生效*/
+@media screen and (max-width: 800px) {/*800*1280*/
+.nav-toggle{ display:inline-block;}
+.nav{ height:auto; display:none;}
+.nav li,.nav li a{width:100% ; text-align:left;display:block; float:none;padding-left:10px; font-size:1.4rem;}
+.nav li{border-bottom:#fff 1px solid; height:auto;}
+.nav li a{ height:34px; line-height:34px;}
+.nav li .chilNav{ position:static; display:block; background:#281110;border:0;padding-left:10px;}
+.nav li .chilNav a{ font-size:1.2rem;color:#fff;border:0;}
+}
+
+/*此样式在窗口小于768px的时候生效*/
+@media screen and (max-width: 768px) {/*768*1024*/
+.header{ height:auto;padding:8px 5px;}
+.logo{width:120px; height:auto;padding:0;}
+.logo img{width:85%; height:auto;}
+.phones{padding:0; line-height:20px;width:180px; font-size:1.2rem;padding-top:5px;}
+.title{font-size:1.4rem; height:35px; line-height:35px;padding:0 5px;}
+.index-pro dl{
+	width:50%;
+	}
+.links li{
+	width:33.33%;
+	}
+.jiameng th{
+	font-size:3rem;	
+	}
+.jiameng .jiaimg{
+	padding:5px;
+	}
+.jiameng td h3{ font-size:1.4rem;}
+.jiameng td{ font-size:1.2rem;}
+footer{ display:none;}
+}
+/*此样式在窗口小于360px的时候生效*/
+@media screen and (max-width: 360px) {/*320*640*/
+.index-pro dl{
+	width:100%;
+	}
+}
+

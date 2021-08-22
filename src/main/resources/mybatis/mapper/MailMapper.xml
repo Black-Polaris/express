@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.MailMapper">
+    <resultMap id="MailMap" type="Kuaidi">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="kuaidiNum" property="kuaidiNum" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="sendAddress" property="sendAddress" jdbcType="VARCHAR"/>
+        <result column="receiveName" property="receiveName" jdbcType="VARCHAR"/>
+        <result column="receivePhone" property="receivePhone" jdbcType="VARCHAR"/>
+        <result column="receiveAddress" property="receiveAddress" jdbcType="VARCHAR"/>
+        <result column="kuaidiType" property="kuaidiType" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <insert id="add">
+        insert into kuaidi values(#{kuaidiNum},#{username},#{phone},#{sendAddress},#{receiveName},#{receivePhone}
+                             ,#{receiveAddress},#{kuaidiType},now())
+    </insert>
+
+
+</mapper>

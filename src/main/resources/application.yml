@@ -1,0 +1,24 @@
+mybatis:
+    mapper-locations: classpath:mybatis/mapper/*.xml
+    type-aliases-package: com.example.entity
+pagehelper:
+    helperDialect: mysql
+    params: count=countSql
+    reasonable: true
+    supportMethodsArguments: true
+server:
+    port: 9999
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 123456
+        url: jdbc:mysql://localhost:3306/expressdelivery?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+        username: root
+    mvc:
+        date-format: yyyy-MM-dd
+        static-path-pattern: /**
+    thymeleaf:
+        cache: false
+    web:
+        resources:
+            static-locations: classpath:/static/

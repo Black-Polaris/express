@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+    <resultMap id="UserMap" type="User">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="userid" property="userid" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="permission" property="permission" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="query" resultMap="UserMap">
+        select * from user
+    </select>
+    <select id="findById" resultMap="UserMap">
+        select * from user where userid = #{userid}
+    </select>
+    <select id="findByUserId" resultMap="UserMap">
+        select * from user where userid = #{userid}
+    </select>
+
+    <insert id="add">
+        insert into user values(#{username},#{userid},#{password},#{phone},#{permission})
+    </insert>
+
+    <update id="update">
+        update user set username = #{username},password = #{password},phone = #{phone} where userid = #{userid}
+    </update>
+
+    <select id="findByPhone" resultMap="UserMap">
+        select * from user where phone=#{phone}
+    </select>
+
+    <delete id="delete">
+        delete from user where userid = #{userid}
+    </delete>
+
+    <update id="updatePermission">
+        update user set permission = #{permission} where userid = #{userid}
+    </update>
+
+    <select id="queryState" resultType="java.lang.String">
+        select permission from user where userid = #{userid}
+    </select>
+
+    <select id="findExist" resultType="java.lang.String">
+        select permission from user where userid = #{userid} and password = #{password}
+    </select>
+
+</mapper>

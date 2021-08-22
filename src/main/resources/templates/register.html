@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon"  th:href="@{images/favicon.jpg}" type="text/css">
+
+  <title>login</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet"
+        th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" type="text/css">
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/signin.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body class="text-center">
+<form class="form-signin" th:action="@{/user/register}" method="post">
+  <img class="mb-4" th:src="@{images/favicon.jpg}" alt="" width="70" height="50">
+  <h3>填写个人信息</h3>
+
+  <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+  <input type="text" name="userid" class="form-control" placeholder="UserId" required>
+  <input type="text" name="password" class="form-control" placeholder="Password" required>
+  <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+</form>
+</body>
+</html>

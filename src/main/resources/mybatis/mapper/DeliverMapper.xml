@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.DeliverMapper">
+    <resultMap id="DeliverMap" type="Deliver">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="deliverName" property="deliverName" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="area" property="area" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="query" resultMap="DeliverMap">
+        select * from deliver
+    </select>
+
+    <select id="findById" resultMap="DeliverMap">
+        select * from deliver where phone = #{phone}
+    </select>
+    <select id="findByArea" resultMap="DeliverMap">
+        select * from deliver where area = #{area}
+    </select>
+
+    <insert id="add">
+        insert into deliver(deliverName ,phone,area) values(#{deliverName},#{phone},#{area})
+    </insert>
+
+    <update id="update">
+        update deliver set deliverName = #{deliverName},area = #{area} where phone = #{phone}
+    </update>
+
+    <delete id="delete">
+        delete from deliver where phone = #{phone}
+    </delete>
+
+
+</mapper>

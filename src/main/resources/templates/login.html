@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon"  th:href="@{images/favicon.jpg}">
+  <title>login</title>
+
+  <!-- Bootstrap core CSS -->
+<!--  <link href="/css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="stylesheet"
+        th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" type="text/css">
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/signin.css}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+<form class="form-signin" action="/user/login" method="post">
+  <img class="mb-4" th:src="@{images/favicon.jpg}" alt="" width="70" height="50">
+  <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+  <!--如果msg为空-->
+  <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+
+  <input type="text" name="username" class="form-control" placeholder="UserId" required autofocus>
+  <input type="password" name="password" class="form-control" placeholder="Password" required>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <a href="/register" class="btn btn-lg btn-primary btn-block">Register</a>
+</form>
+
+</body>
+</html>
